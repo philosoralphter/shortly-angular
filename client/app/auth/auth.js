@@ -6,15 +6,19 @@ angular.module('shortly.auth', [])
 .controller('AuthController', function ($scope, $window, $location, Auth) {
   $scope.user = {};
 
-  $scope.signin = function () {
-    Auth.signin($scope.user)
-      .then(function (token) {
-        $window.localStorage.setItem('com.shortly', token);
-        $location.path('/links');
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+  $scope.signin = function (valid) {
+    if(valid){
+      Auth.signin($scope.user)
+        .then(function (token) {
+          $window.localStorage.setItem('com.shortly', token);
+          $location.path('/links');
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    } else{
+      console.log("invalid username/password")
+    }
   };
 
   $scope.signup = function () {

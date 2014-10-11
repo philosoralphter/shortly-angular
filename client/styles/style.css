@@ -146,3 +146,12 @@ input[type=url]:focus {
   clear: both;
 }
 
+.help-block {
+  color: red;
+  margin-bottom: 0px;
+}
+
+input{
+  clear: both;
+  float: left;
+}
