@@ -4,7 +4,7 @@ angular.module('shortly.shorten', [])
   $scope.link = {};
 
   $scope.addLink = function(){
-    console.log("OOOOOGAAA BOOGGAAA", Links);
+    //console.log("OOOOOGAAA BOOGGAAA", Links);
     Links.sendLink($scope.link);
   };
 });

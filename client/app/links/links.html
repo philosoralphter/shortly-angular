@@ -6,6 +6,8 @@
     <a href="#/shorten">Shorten</a>
   </nav>
   <ul>
-    <li ng-repeat='url in data'> {{ url[0].base_url + '/' + url[0].code }} </li>
+    <li ng-repeat='url in data.links'>
+      <a href='{{url.base_url}}/api/links/{{url.code}}'>{{ url.title }}</a>
+    </li>
   </ul>
 </div>
